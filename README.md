@@ -1,48 +1,72 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Desktop (JVM).
+# News Feed Simulator
 
-* [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./composeApp/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./composeApp/src/jvmMain/kotlin)
-    folder is the appropriate location.
-
-* [/iosApp](./iosApp/iosApp) contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
-
-### Build and Run Android Application
-
-To build and run the development version of the Android app, use the run configuration from the run widget
-in your IDE’s toolbar or build it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:assembleDebug
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:assembleDebug
-  ```
-
-### Build and Run Desktop (JVM) Application
-
-To build and run the development version of the desktop app, use the run configuration from the run widget
-in your IDE’s toolbar or run it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:run
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:run
-  ```
-
-### Build and Run iOS Application
-
-To build and run the development version of the iOS app, use the run configuration from the run widget
-in your IDE’s toolbar or open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+**Nama:** Muhammad Nurikhsan  
+**NIM:** 123140057  
+**Program Studi:** Teknik Informatika 
 
 ---
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+## Deskripsi
+Aplikasi Kotlin + Jetpack Compose yang mensimulasikan feed berita real-time menggunakan:
+
+- Flow (emit tiap 2 detik)
+- Filter kategori
+- Transform data
+- StateFlow
+- Coroutine async
+
+Kategori berita:
+- Teknologi
+- Politik
+- Cuaca
+
+---
+
+## Cara Menjalankan
+
+1. Clone atau download repository
+2. Buka di Android Studio
+3. Tunggu Gradle Sync selesai
+4. Klik Run (▶)
+
+---
+
+## Cara Menggunakan
+
+- Tekan **Start** → berita muncul setiap 2 detik
+- Klik berita → jumlah dibaca bertambah & detail tampil (async)
+- Tekan **Ganti Kategori** → filter berubah
+- Tekan **Stop** → reset data
+
+---
+
+## Implementasi Sesuai Ketentuan
+
+✔ Flow dengan `delay(2000)`  
+✔ Filter dengan `.filter {}`  
+✔ Transform dengan `.map {}`  
+✔ StateFlow untuk jumlah dibaca  
+✔ Coroutine `launch + async/await` untuk detail berita  
+
+---
+
+## Screenshot
+
+### Tampilan Awal
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/fa6bb360-1b47-44ae-8dc1-126c920a6a3f" />
+
+
+### Kategori Teknologi
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/50b31062-bb33-4db3-9d96-5c1c7568bf8c" />
+
+
+### Kategori Politik
+<img width="1913" height="1073" alt="image" src="https://github.com/user-attachments/assets/9c585591-8305-4ad2-abd5-d10f267a362c" />
+
+
+### Kategori Cuaca
+<img width="1918" height="1076" alt="image" src="https://github.com/user-attachments/assets/79a27799-fcc2-4348-a051-e8f1dec094fb" />
+
+---
+
+Project berjalan normal dan seluruh fitur sesuai dengan deskripsi tugas.
